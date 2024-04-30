@@ -13,6 +13,7 @@ class KafkaTransport implements TransportInterface
 {
     private Connection $connection;
     private SerializerInterface $serializer;
+    private KafkaReceiver $receiver;
 
     public function __construct(Connection $connection, SerializerInterface $serializer)
     {
@@ -22,21 +23,26 @@ class KafkaTransport implements TransportInterface
 
     public function get(): iterable
     {
-        // TODO: Implement get() method.
+        return $this->getReceiver()->get();
     }
 
     public function ack(Envelope $envelope): void
     {
-        // TODO: Implement ack() method.
+        dd('ack', $envelope);
     }
 
     public function reject(Envelope $envelope): void
     {
-        // TODO: Implement reject() method.
+        dd('reject', $envelope);
     }
 
     public function send(Envelope $envelope): Envelope
     {
-        // TODO: Implement send() method.
+        dd('send', $envelope);
+    }
+
+    private function getReceiver(): KafkaReceiver
+    {
+        return $this->receiver ??= new KafkaReceiver($this->connection, $this->serializer);
     }
 }
