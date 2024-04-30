@@ -1,0 +1,6 @@
+/.php-version
+/composer
+/composer.lock
+/tests/coverage/
+/vendor/
+/.idea/

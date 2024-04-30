@@ -1,0 +1,27 @@
+{
+  "name": "ilbee/totp",
+  "description": "Kafka transport for Symfony Messenger",
+  "keywords": ["symfony", "messenger", "kafka", "php"],
+  "homepage": "https://github.com/ilbee/kafka-messenger",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Julien PRIGENT",
+      "email": "julien.prigent@dbmail.com"
+    }
+  ],
+  "require": {
+    "php": "7.4 || ^8.1",
+    "ext-rdkafka": "*",
+    "symfony/messenger": "^5.4|^6.0|^7.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Ilbee\\Symfony\\Messenger\\Bridge\\Kafka\\": "src/"
+    },
+    "exclude-from-classmap": [
+      "/Tests/"
+    ]
+  }
+}
