@@ -1,5 +1,5 @@
 {
-  "name": "ilbee/totp",
+  "name": "ilbee/kafka-messenger",
   "description": "Kafka transport for Symfony Messenger",
   "keywords": ["symfony", "messenger", "kafka", "php"],
   "homepage": "https://github.com/ilbee/kafka-messenger",
